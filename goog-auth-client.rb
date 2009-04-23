@@ -32,7 +32,7 @@ class GoogleAuthClient < Shoes
   end
   
   def authenticate(email,password)
-    response = RestClient.post 'https://www.google.com/accounts/ClientLogin', 'accountType' => 'HOSTED_OR_GOOGLE', 'Email' => email, 'Passwd' => password, :service => 'cl', :source => 'Gulp-CalCulp-1.05'
+    response = RestClient.post 'https://www.google.com/accounts/ClientLogin', 'accountType' => 'HOSTED_OR_GOOGLE', 'Email' => email, 'Passwd' => password, :service => 'xapi', :source => 'Goog-Auth-1.0'
     return true if response.code == 200
     return false
   end   
