@@ -3,15 +3,7 @@ Shoes.setup do
    gem 'net-ssh'
    
 end
-require 'rest_client'
-require 'openssl.so'
-require 'openssl.so'
-require 'openssl/bn'
-require 'openssl/cipher'
-require 'openssl/digest'
-require 'openssl/ssl'
-require 'openssl/x509'
-require 'net/ssh'
+%w(rest_client openssl.so openssl/bn openssl/cipher openssl/digest openssl/ssl openssl/x509 net/ssh).each  { |lib| require lib}
 
 class GoogleAuthClient < Shoes
   url '/', :login
